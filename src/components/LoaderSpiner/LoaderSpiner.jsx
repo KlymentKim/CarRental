@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import css from './LoaderModal.module.css';
+import css from './LoaderSpiner.module.css';
 import { BallTriangle } from 'react-loader-spinner';
 
-class LoaderModal extends Component {
+class LoaderSpiner extends Component {
   render() {
     return (
       <div className={css.overlay} id="overlay">
@@ -21,4 +21,4 @@ class LoaderModal extends Component {
   }
 }
 
-export default LoaderModal;
+export default LoaderSpiner;
