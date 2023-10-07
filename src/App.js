@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
+import Header from "./components/Pages/Header/Header";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import Home from "./components/Pages/Home/Home";
 import Catalog from "./components/Pages/Catalog/Catalog";
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index path="home" element={<Home />} />
+          <Route path="header" element={<Header />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="favourites" element={<Favourites />} />
         </Route>

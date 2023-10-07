@@ -11,16 +11,16 @@
   @media (min-width: 834px) {
     .container {
       width: 834px;
-      padding-left: 27px;
-      padding-right: 27px;
+      padding-left: 18px;
+      padding-right: 18px;
     }
   }
   
-  @media (min-width: 1440px) {
+  @media (min-width: 1232px) {
     .container {
       width: 1440px;
-      padding-left: 34px;
-      padding-right: 34px;
+      padding-left: 24px;
+      padding-right: 24px;
     }
   }
   
