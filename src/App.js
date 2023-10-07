@@ -16,7 +16,6 @@ function App() {
           <Route path="catalog" element={<Catalog />} />
           <Route path="favourites" element={<Favourites />} />
         </Route>
-        <Route exact path="/*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
