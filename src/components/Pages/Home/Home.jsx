@@ -1,13 +1,22 @@
 import React from 'react'
-// import css from './Home.module.css'
+import css from './Home.module.css'
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+    <section className={css.section}>
+        <h1>Home</h1>
+        <div>
+        <form onSubmit>
+          <label>
+          Car brand
+            <select type="text" name="name" onChange={e=>console.log(e.target.value)}  />
+          </label>
+          <button type="submit">Search</button>
+        </form>
       </div>
+    </section>
+    
+     
   )
 }
 

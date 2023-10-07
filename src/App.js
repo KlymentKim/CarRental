@@ -15,6 +15,7 @@ function App() {
           <Route path="catalog" element={<Catalog />} />
           <Route path="favourites" element={<Favourites />} />
         </Route>
+        <Route path="*" element={<Home />} />
       </Routes>
     </>
   );

@@ -8,10 +8,10 @@ const Header = () => {
     <div className={css.wrapper_header}>
       <div className={css.header}>
         <NavLink className={css.logo_header} to="/Home">
-          <div class={css.wrap}>
-            <h1 class={css.gradient_text}>Car-Rental</h1>
+          <div className={css.wrap}>
+            <p className={css.gradient_text}>Car-Rental</p>
           </div>
-        </NavLink>  
+          </NavLink> 
         <nav className={css.nav_header}>
           <ul className={css.header_list}>
             <li className={css.header_item}><NavLink to="/Home">Home</NavLink></li>
