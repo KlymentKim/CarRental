@@ -15,6 +15,6 @@
     width: 300px;
     height: 266px;
     border-radius: 12px;
-    background-color: var(--primary-black-second-color);
+    background-color: var(--pr-input-background-color);
     padding: 16px 12px;
   }
