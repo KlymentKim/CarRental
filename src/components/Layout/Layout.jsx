@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../Container/Container";
 import Header from "../Pages/Header/Header";
+// import Home from "../Pages/Home/Home";
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import css from "./Layout.module.css";
@@ -14,13 +15,19 @@ const Layout = () => {
           <Header />
         </Container>
       </header>
+      {/* <article>
+        <div className={css.backgroundImg}>
+          <Home />
+        </div>
+      </article> */}
       <Container>
         <main>
-          <div className={css.background}></div>
-          <Suspense fallback={<LoaderSpiner />}>
-            <Outlet />
-            {/* <p style={{ color: "#080707", marginTop: 30 }}>Group#4</p> */}
-          </Suspense>
+          <div>
+            <Suspense fallback={<LoaderSpiner />}>
+              <Outlet />
+              {/* <p style={{ color: "#080707", marginTop: 30 }}>Group#4</p> */}
+            </Suspense>
+          </div>
         </main>
       </Container>
     </>

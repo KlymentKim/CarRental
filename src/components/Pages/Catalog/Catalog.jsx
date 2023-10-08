@@ -2,7 +2,16 @@ import React from 'react'
 
 const Catalog = () => {
   return (
-    <div>Catalog</div>
+    <div>
+      <div>Catalog</div>
+    <form onSubmit>
+      <label>
+      Car brand
+        <select type="text" name="name" onChange={e=>console.log(e.target.value)}  />
+      </label>
+      <button type="submit">Search</button>
+    </form>
+  </div>
   )
 }
 

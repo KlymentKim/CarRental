@@ -27,7 +27,7 @@
 
   /* gragient logo */
 
-.wrap{width:100%;}
+/* .wrap{width:100%;}
 .gradient_text{
   font-family:inherit;
   background: linear-gradient(to right, crimson,pink,springgreen);
@@ -36,9 +36,6 @@
   background-clip: text;
   -webkit-background-clip:text;
   color:rgba(0,0,0,1);
-  /* font-size:24px; */
-/*   width:80vw; */
-/*   margin:30vh auto; */
   display:flex;
   text-align:center;
   transition: color .2s ease-in-out;
@@ -52,4 +49,4 @@
   0%{background-position:left}
   50%{background-position:right}
   100%{background-position:left}
-}
+} */

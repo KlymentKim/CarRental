@@ -1,23 +1,13 @@
-import React from 'react'
-import css from './Home.module.css'
+import React from "react";
+import css from "./Home.module.css";
+// import backgroundImg from "../../../assets/img/rentcar_bg.jpg";
 
 const Home = () => {
   return (
-    <section className={css.section}>
-        <h1>Home</h1>
-        <div>
-        <form onSubmit>
-          <label>
-          Car brand
-            <select type="text" name="name" onChange={e=>console.log(e.target.value)}  />
-          </label>
-          <button type="submit">Search</button>
-        </form>
-      </div>
-    </section>
-    
-     
+    <div className={css.backgroundImg} >
+    <h1 className={css.header}>Welcome to the Car-Rental service</h1>
+  </div>
   )
-}
+};
 
 export default Home;
