@@ -7,8 +7,7 @@ import Catalog from "./components/Pages/Catalog/Catalog";
 
 function App() {
   return (
-    <>
-      {/* <LoaderSpiner /> */}
+      // {/* <LoaderSpiner /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="home" element={<Home />} />
@@ -16,10 +15,8 @@ function App() {
           <Route path="favourites" element={<Favourites />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
-        <Route path="*" element={<Home />} />
       </Routes>
-    </>
-  );
+  );  
 }
 
 export default App;
