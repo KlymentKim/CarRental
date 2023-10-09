@@ -1,9 +1,8 @@
 {
   "name": "CarRental",
-  "main": "dist/index.js",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://KlymentKim.github.io/CarRental",
+  "homepage": "https://KlymentKim.github.io/CarRental/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
