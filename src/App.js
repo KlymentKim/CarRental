@@ -3,9 +3,12 @@ import Layout from "./components/Layout/Layout";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import Home from "./components/Pages/Home/Home";
 import Catalog from "./components/Pages/Catalog/Catalog";
+// import { useDispatch } from 'react-redux';
 // import LoaderSpiner from "./components/LoaderSpiner/LoaderSpiner";
 
 function App() {
+  // const dispatch = useDispatch();
+
   return (
       // {/* <LoaderSpiner /> */}
       <Routes>
