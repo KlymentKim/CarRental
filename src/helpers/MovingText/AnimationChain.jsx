@@ -14,9 +14,8 @@ const AnimationChain = () => {
         direction="normal"
         timing="ease"
         iteration="1"
-        fillMode="none"
-      >
-        Welcome to a Car-Rental service
+        fillMode="none">
+        Welcome <br/> Car-Rental Service
       </MovingComponent>
     </div>
   );
