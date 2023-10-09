@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import carBrand from "../../apis/db/carBrand.json";
 import css from "./CarFilter.module.css";
-import Select from "../../helpers/Select";
+import SelectPrice from "../../helpers/Select/SelectPrice";
 import SelectBrand from "../../helpers/SelectBrand";
 
 import React from "react";
@@ -41,7 +41,7 @@ const CarFilter = () => {
         </div>
         <div className={css.select_wrapper}>
           <label className={css.label_title}>Price/ 1 hour</label>
-          <Select
+          <SelectPrice
             selectedPrice={selectedPrice}
             setSelectedPrice={setSelectedPrice}
           />
