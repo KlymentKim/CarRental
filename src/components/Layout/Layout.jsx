@@ -17,12 +17,9 @@ const Layout = () => {
       </header>
       <Container>
         <main>
-          <div>
             <Suspense fallback={<LoaderSpiner />}>
               <Outlet />
-              {/* <p style={{ color: "#080707", marginTop: 30 }}>Group#4</p> */}
             </Suspense>
-          </div>
         </main>
       </Container>
     </>

@@ -14,7 +14,7 @@ html {
 
 :root {
   --pr-background-color: #ffffff;
-  --pr-text-color: #8A8A89;
+  --pr-text-color: #8a8a89;
   --pr-text-color: #121417;
   --pr-input-background-color: #f7f7fb;
   --pr-button-background-color: #3470ff;
@@ -38,7 +38,8 @@ ul {
   margin: 0;
   list-style: none;
 }
-nav, ul{
+nav,
+ul {
   margin: 0;
   padding: 0;
 }
