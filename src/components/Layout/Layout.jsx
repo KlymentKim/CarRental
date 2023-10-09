@@ -15,11 +15,6 @@ const Layout = () => {
           <Header />
         </Container>
       </header>
-      {/* <article>
-        <div className={css.backgroundImg}>
-          <Home />
-        </div>
-      </article> */}
       <Container>
         <main>
           <div>
