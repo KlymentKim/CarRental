@@ -1,17 +1,23 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://65216e3da4199548356d33a1.mockapi.io/api/1/";
-export const quantityPage = 8;
-
-const fetchMockapi = async (page = 1) => {
+// axios.defaults.baseURL = "https://65216e3da4199548356d33a1.mockapi.io/api/1/";
+axios.defaults.baseURL = "https://651fc0b1906e276284c373de.mockapi.io/api/v1/";
+export async function fetchAdverts(page) {
   try {
-    const response = await axios.get(
-      `adverts?quantityPage=${quantityPage}&page=${page}`
-    );
-    return response.data;
+    const res = await axios.get("/adverts", {
+      params: { page: page, limit: 8 },
+    });
+    return res.data;
   } catch (error) {
     console.error(error);
   }
-};
+}
 
-export default fetchMockapi;
+export async function fetchAllAdverts() {
+  try {
+    const res = await axios.get("/adverts");
+    return res.data;
+  } catch (error) {
+    console.error(error);
+  }
+}

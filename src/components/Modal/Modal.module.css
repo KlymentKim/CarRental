@@ -43,17 +43,17 @@
   align-items: start;
   margin-bottom: 8px;
 }
-.carTitle h2 {
+ h2 {
   color: #121417;
-  font-family: "Manrope", sans-serif;
+  font-family: inherit;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.33;
   text-wrap: nowrap;
 }
-.carTitle span {
-  color: #3470ff;
-  font-family: "Manrope", sans-serif;
+span {
+  color: var(--pr-button-background-color);
+  font-family: inherit;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.33;
@@ -61,7 +61,7 @@
 
 .carInfo {
   color: rgba(18, 20, 23, 0.5);
-  font-family: "Manrope", sans-serif;
+  font-family: inherit;
   font-size: 12px;
   line-height: 1.5;
 }
@@ -104,14 +104,14 @@
   border-radius: 35px;
   background: #f9f9f9;
   color: #363535;
-  font-family: "Manrope", sans-serif;
+  font-family: inherit;
   font-size: 12px;
   line-height: 1.5;
 }
 .btnRentalCar {
   padding: 12px 50px;
   border-radius: 12px;
-  background: #3470ff;
+  background: var(--pr-button-background-color);
   color: var(--White, #fff);
   font-family: "Manrope", sans-serif;
   font-size: 14px;
@@ -123,5 +123,5 @@
 }
 .btnRentalCard:hover,
 .btnRentalCard:focus {
-  background: #0b44cd;
+  background: var(--hovered-button-background-color);
 }

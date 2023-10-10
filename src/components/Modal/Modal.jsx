@@ -1,8 +1,8 @@
 import React from "react";
 import css from "./Modal.module.css";
-import closeBtn from "../../assets/close.svg";
+import closeBtn from "../../assets/img/close.svg";
 
-function Modal({ closeModal, advert }) {
+const Modal = ({ closeModal, advert })=> {
   const conditions = advert.rentalConditions.split("\n");
   const address = advert.address.split(",");
   const city = address[address.length - 2];

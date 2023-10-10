@@ -2,14 +2,11 @@ import React, { useState } from "react";
 import carBrand from "../../apis/db/carBrand.json";
 import css from "./CarFilter.module.css";
 import SelectPrice from "../../helpers/SelectPrice/SelectPrice";
-import SelectBrand from "../../helpers/SelectBrand";
+import SelectBrand from "../../helpers/SelectBrand/SelectBrand";
 
-import React from "react";
 
-const CarFilter = () => {
-  // const selectCarBrand=[
-  //     ...new Set(carBrand.map(car=>({value:car.make,label:car.make}))),
-  // ];
+const CarFilter = ({onFilterChange}) => {
+
   const [selectedMake, setSelectedMake] = useState("");
   const [selectedPrice, setSelectedPrice] = useState("");
   const [minMileage, setMinMileage] = useState("");
@@ -71,7 +68,7 @@ const CarFilter = () => {
             />
           </div>
         </div>
-        <button type="submit" className={btn_Search}>Search</button>
+        <button type="submit" className={css.btn_Search}>Search</button>
       </form>
     </>
   );

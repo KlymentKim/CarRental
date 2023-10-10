@@ -1,4 +1,4 @@
-import  css from './LoadMore.module.css';
+import css from "./ButtonLoad.module.css"
 
 const LoadMore = ({ handleClick }) => {
   return (
