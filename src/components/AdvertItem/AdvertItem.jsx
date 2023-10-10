@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal from "./Modal/Modal";
+import Modal from "../Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToFavorites,
@@ -7,6 +7,7 @@ import {
 } from "../../redux/favorite/favoriteSlice";
 import iconAddFavorites from "./../../assets/img/addHeart.svg";
 import iconRemoveFavorites from "./../../assets/img/removeHeart.svg";
+import css from "./AdvertItem.module.css";
 
 function AdvertItem({ advert }) {
   const [openModal, setOpenModal] = useState(false);
@@ -44,5 +45,48 @@ function AdvertItem({ advert }) {
     }
   };
 
-  return <></>;
+  return (
+    <>
+      <div className={css.cardLi}>
+        <div className={css.cardWrapper}>
+          <button className={css.btnAddFavorite} onClick={toggleFavorite}>
+            {favorites.some((favorite) => favorite.id === advert.id) ? (
+              <img src={iconAddFavorites} alt="icon add" />
+            ) : (
+              <img src={iconRemoveFavorites} alt="icon remove" />
+            )}
+          </button>
+
+          <img className={css.carImg} src={advert.img} alt="car" height={268} />
+        </div>
+
+        <div>
+          <div className={css.carTitle}>
+            <h2>
+              {advert.make} <span>{advert.model}</span>, {advert.year}
+            </h2>
+            <p>{advert.rentalPrice}</p>
+          </div>
+          <div className={css.carInfo}>
+            {city}&ensp;|&ensp;{country}&ensp;|&ensp;{advert.rentalCompany}
+          </div>
+
+          <div className={css.carInfo}>
+            {advert.type}&ensp;|&ensp;{advert.make}
+            &ensp;|&ensp;{Number(advert.mileage).toLocaleString("en")}
+            &ensp;|&ensp;{advert.accessories[0]}
+          </div>
+        </div>
+        <button className={css.btnLearnMore} onClick={openModalHendler}>
+          Learn more
+        </button>
+      </div>
+
+      {openModal && (
+        <Modal closeModal={closeModalHendler} advert={advert} key={advert.id} />
+      )}
+    </>
+  );
 }
+
+export default AdvertItem;

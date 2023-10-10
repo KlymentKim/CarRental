@@ -1,6 +1,6 @@
 import Select from "react-select";
 
-const SelectBrand = ({ selectedMake, setSelectedMake, makes }) => {
+const SelectBrandFavorite = ({ selectedMake, setSelectedMake, makes }) => {
   const options = [
     { value: null, label: "Enter the text" },
     ...makes.map((make, index) => ({
@@ -16,7 +16,7 @@ const SelectBrand = ({ selectedMake, setSelectedMake, makes }) => {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
-      width: "224px",
+      width: "320px",
       display: "block",
       border: "none",
       borderRadius: "14px",
@@ -61,7 +61,7 @@ const SelectBrand = ({ selectedMake, setSelectedMake, makes }) => {
     }),
     menuList: (provided) => ({
       ...provided,
-      width: "224px",
+      width: "320px",
       height: "272px",
       zIndex: 9999,
       display: "flex",
@@ -101,4 +101,4 @@ const SelectBrand = ({ selectedMake, setSelectedMake, makes }) => {
   );
 };
 
-export default SelectBrand;
+export default SelectBrandFavorite;

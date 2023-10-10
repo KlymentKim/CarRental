@@ -1,4 +1,10 @@
-import React from 'react'
+// import { useEffect } from "react";
+// import AdvertItem from "../../AdvertItem/AdvertItem";
+// import ButtonLoad from "../../";
+// import { useDispatch, useSelector } from "react-redux";
+
+
+
 
 const Catalog = () => {
   return (

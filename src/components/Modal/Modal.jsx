@@ -13,9 +13,7 @@ function Modal({ closeModal, advert }) {
       closeModal();
     }
   };
-}
 
-const Modal = () => {
   return (
     <div className={css.overlay} onClick={handleOverlyClick}>
       <div className={css.modalContainer}>
@@ -108,5 +106,5 @@ const Modal = () => {
       {/* overlayContainer */}
     </div>
   );
-};
+}
 export default Modal;

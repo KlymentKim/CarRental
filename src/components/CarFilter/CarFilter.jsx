@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import carBrand from "../../apis/db/carBrand.json";
 import css from "./CarFilter.module.css";
-import SelectPrice from "../../helpers/Select/SelectPrice";
+import SelectPrice from "../../helpers/SelectPrice/SelectPrice";
 import SelectBrand from "../../helpers/SelectBrand";
 
 import React from "react";
