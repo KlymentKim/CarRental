@@ -6,6 +6,12 @@ import SelectBrand from "../../helpers/SelectBrand/SelectBrand";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFilters } from "../../redux/selectors";
 import { resetFilters } from "../../redux/filters/filtersSlice";
+import {
+  InputDiv,
+  InputPl,
+  InputLeft,
+  InputRight,
+} from "../CarFilter/CarFilter.styled";
 
 const CarFilter = ({ onFilterChange }) => {
   const [selectedMake, setSelectedMake] = useState("");
@@ -69,35 +75,31 @@ const CarFilter = ({ onFilterChange }) => {
 
       <div className={css.select_wrapper}>
         <label className={css.label_title}>Car mealege / km</label>
+
         <div>
           <div>
-            <div>
-              <div className={css.input_wrapper}>
-                <div className={css.titleInput}>From</div>
-                <input
-                  className={css.left_input}
-                  type="number"
-                  name="minMileage"
-                  value={minMileage}
-                  onClick={(e) => {
-                    const value = Math.max(e.target.value, 0);
-                    setMinMileage(value);
-                  }}
-                />
-              </div>
-              <div className={css.input_wrapper}>
-                <div className={css.titleInput}>To</div>
-                <input
-                  className={css.rigth_input}
-                  type="number"
-                  value={maxMileage}
-                  onClick={(e) => {
-                    const value = Math.max(e.target.value, 0);
-                    setMaxMileage(value);
-                  }}
-                />
-              </div>
-            </div>
+            <InputDiv>
+              <InputPl>From</InputPl>
+              <InputLeft
+                type="number"
+                value={minMileage}
+                onChange={(e) => {
+                  const value = Math.max(e.target.value, 1);
+                  setMinMileage(value);
+                }}
+              />
+            </InputDiv>
+            <InputDiv>
+              <InputPl>To</InputPl>
+              <InputRight
+                type="number"
+                value={maxMileage}
+                onChange={(e) => {
+                  const value = Math.max(e.target.value, 1);
+                  setMaxMileage(value);
+                }}
+              />
+            </InputDiv>
           </div>
         </div>
       </div>
@@ -106,7 +108,6 @@ const CarFilter = ({ onFilterChange }) => {
       </button>
       <button type="reset" onClick={clearFilters} className={css.closeBtn}>
         Reset
-        {/* <img src={closeBtn} alt="closeBtn" /> */}
       </button>
     </form>
   );

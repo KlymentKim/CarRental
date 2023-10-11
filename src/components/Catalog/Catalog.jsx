@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AdvertItem from "../AdvertItem/AdvertItem";
-import  LoadMore  from "../../helpers/LoadMore/LoadMore";
-// import css from "./Catalog.module.css";
+import LoadMore from "../../helpers/LoadMore/LoadMore";
+import css from "./Catalog.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { onNextPage } from "../../redux/catalog/catalogSlice";
 import { setAdverts, setAllAdverts } from "../../redux/catalog/operations";
@@ -13,11 +13,8 @@ import {
   selectIsLoading,
   selectPage,
 } from "../../redux/selectors";
-import { AdvertsList, NoMatching } from "./Catalog.styled";
-
 
 const Catalog = () => {
-
   const [isBnt, setIsBtn] = useState(true);
   const dispatch = useDispatch();
 
@@ -78,15 +75,17 @@ const Catalog = () => {
       {adverts && (
         <>
           {filteredAdverts.length > 0 ? (
-            <AdvertsList>
+            <ul className={css.advertsList}>
               {(isFilterOn ? filteredAdverts : adverts).map((advert) => {
                 return <AdvertItem key={advert.id} advert={advert} />;
               })}
-            </AdvertsList>
+            </ul>
           ) : (
             <>
               {!isLoading && (
-                <NoMatching>Sorry, no matching adverts found</NoMatching>
+                <div className={css.noMatching}>
+                  Sorry, no matching adverts found
+                </div>
               )}
             </>
           )}
@@ -99,36 +98,5 @@ const Catalog = () => {
       )}
     </>
   );
-
-  // return (
-  //   <>
-  //     {adverts && (
-  //       <>
-  //         {filteredAdverts.length > 0 ? (
-  //           <ul className={css.advertsList}>
-  //             {(isFilterOn ? filteredAdverts : adverts).map((advert) => {
-  //               return <AdvertItem key={advert.id} advert={advert} />;
-  //             })}
-  //           </ul>
-  //         ) : (
-  //           <>
-  //             {!isLoading && (
-  //               <div className={css.noMatching}>
-  //                 Sorry, no matching adverts found
-  //               </div>
-  //             )}
-  //           </>
-  //         )}
-  //         {isLoading ? (
-  //           <LoaderSpiner />
-  //         ) : (
-  //           <>{isBnt && <ButtonLoad onFindMore={onFindMore}
-  //            variant="text" />}
-  //           </>
-  //         )}
-  //       </>
-  //     )}
-  //   </>
-  // );
 };
 export default Catalog;
