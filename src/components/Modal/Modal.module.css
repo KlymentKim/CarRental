@@ -1,4 +1,4 @@
-/* .overlay {
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,13 +15,13 @@
   width: 541px;
   height: 752px;
   border-radius: 24px;
-  background:var(--pr-background-color);
+  background: #fff;
   padding: 40px;
 }
 .closeBtn {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 10px;
+  right: 10px;
   background: transparent;
 }
 .wrapperCar {
@@ -43,7 +43,7 @@
   align-items: start;
   margin-bottom: 8px;
 }
- h2 {
+.carTitle h2 {
   color: #121417;
   font-family: inherit;
   font-size: 18px;
@@ -51,7 +51,7 @@
   line-height: 1.33;
   text-wrap: nowrap;
 }
-span {
+.carTitle span {
   color: var(--pr-button-background-color);
   font-family: inherit;
   font-size: 18px;
@@ -124,4 +124,4 @@ span {
 .btnRentalCard:hover,
 .btnRentalCard:focus {
   background: var(--hovered-button-background-color);
-} */
+}

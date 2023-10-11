@@ -14,7 +14,6 @@ import {
   selectPage,
 } from "../../redux/selectors";
 
-// import { fetchAdverts, fetchAllAdverts } from "../../apis/fetchMockapi";
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -95,7 +94,9 @@ const Catalog = () => {
           {isLoading ? (
             <LoaderSpiner />
           ) : (
-            <>{isBnt && <ButtonLoad onFindMore={onFindMore} />}</>
+            <>{isBnt && <ButtonLoad onFindMore={onFindMore}
+             variant="text" />}
+            </>
           )}
         </>
       )}

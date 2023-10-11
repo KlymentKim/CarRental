@@ -68,6 +68,7 @@ const Favorite = ({ onFilterChange }) => {
             setSelectedPrice={setSelectedPrice}
           />
         </div>
+        
         <div className={css.select_wrapper}>
           <ladel className={css.lable_title}>Сar mileage / km</ladel>
 

@@ -37,7 +37,6 @@
 }
 .input_wrapper{
   position: relative;
-
 }
 .titleInput{
   position: absolute;
@@ -54,12 +53,12 @@
   outline: none;
   width: 160px;
   height: 54px;
-  padding: 14px 24px 14px 62px;
+  /* padding: 14px 24px 14px 62px; */
   border-radius: 14px 0px 0px 14px;
   border-right: 1px solid rgba(138, 138, 137, 0.2);
   background: #f7f7fb;
   color: #121417;
-  font-family: inherit;
+  font-family: "Manrope", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.11;
@@ -69,11 +68,11 @@
   outline: none;
   width: 160px;
   height: 54px;
-  padding: 14px 24px 14px 38px;
+  /* padding: 14px 24px 14px 38px; */
   border-radius: 0px 14px 14px 0px;
   background: #f7f7fb;
   color: #121417;
-  font-family: inherit;
+  font-family: "Manrope", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.11;

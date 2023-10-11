@@ -1,7 +1,7 @@
 import css from "./Modal.module.css";
 import closeBtn from "../../assets/img/close.svg";
 
-const Modal = ({ closeModal, advert })=> {
+const Modal = ({ closeModal, advert }) => {
   const conditions = advert.rentalConditions.split("\n");
   const address = advert.address.split(",");
   const city = address[address.length - 2];
@@ -17,9 +17,9 @@ const Modal = ({ closeModal, advert })=> {
     <div className={css.overlay} onClick={handleOverlyClick}>
       <div className={css.modalContainer}>
         <button className={css.closeBtn} onClick={closeModal}>
-          <img src={closeBtn} alt="close" />
+          <img src={closeBtn} alt="close" width={14} height={14} />
         </button>
-        {/* carImg */}
+
         <div>
           <div className={css.wrapperCar}>
             <img
@@ -31,18 +31,18 @@ const Modal = ({ closeModal, advert })=> {
             />
           </div>
         </div>
-        {/* carTitle */}
+
         <div className={css.carTitle}>
           <h2>
             {advert.make} <span> {advert.model}</span>, {advert.year}
           </h2>
         </div>
-        {/* carInfo */}
+
         <div className={css.carInfo}>
           {city}&ensp;|&ensp;{country}&ensp;|&ensp;Id: {advert.id}
           &ensp;|&ensp;Year: {advert.year}&ensp;|&ensp;Type: {advert.type}
         </div>
-        {/* carInfo */}
+
         <div className={css.carInfo}>
           Fuel Consumption: {advert.fuelConsumption}
           &ensp;|&ensp;Engine Size: {advert.engineSize}
@@ -50,7 +50,7 @@ const Modal = ({ closeModal, advert })=> {
 
         <div className={css.carDescription}>{advert.description}</div>
         <div className={css.secondaryTitle}>
-          Accessories and functionalities:{" "}
+          Accessories and functionalities:
         </div>
 
         <div className={css.AccessoriesList}>
@@ -60,8 +60,7 @@ const Modal = ({ closeModal, advert })=> {
         </div>
         <div className={css.secondaryTitle}>Rental Conditions: </div>
 
-        {/* conditionList */}
-        <div className={css.conditionList}>
+        <ul className={css.conditionList}>
           {conditions.map((condition, index) => {
             const characters = condition.split("");
             return (
@@ -95,15 +94,19 @@ const Modal = ({ closeModal, advert })=> {
               {advert.rentalPrice}
             </span>
           </li>
-        </div>
+        </ul>
 
-        <button href="tel:+380730000000" className={css.btnRentalCar}>
+        <button
+          className={css.btnRentalCar}
+          onClick={() => {
+            window.location.href = "tel:+380730000000";
+          }}
+        >
           Rental car
         </button>
-         {/* modalContainer */}
       </div>
       {/* overlayContainer */}
     </div>
   );
-}
+};
 export default Modal;
