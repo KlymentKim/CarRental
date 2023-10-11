@@ -3,7 +3,7 @@ import Select from "react-select";
 const SelectBrand = ({ selectedMake, setSelectedMake, makes }) => {
   const options = [
     { value: null, label: "Enter the text" },
-    ...makes.map((make, index) => ({
+      ...makes.map((make, index) => ({
       value: make,
       label: make,
     })),

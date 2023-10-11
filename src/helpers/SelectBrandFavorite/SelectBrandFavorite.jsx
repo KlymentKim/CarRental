@@ -1,6 +1,6 @@
 import Select from "react-select";
 
-const SelectBrandFavorite = ({ selectedMake, setSelectedMake, makes }) => {
+const MySelectMakeFav = ({ selectedMake, setSelectedMake, makes }) => {
   const options = [
     { value: null, label: "Enter the text" },
     ...makes.map((make, index) => ({
@@ -101,4 +101,4 @@ const SelectBrandFavorite = ({ selectedMake, setSelectedMake, makes }) => {
   );
 };
 
-export default SelectBrandFavorite;
+export default MySelectMakeFav;

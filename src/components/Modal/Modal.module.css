@@ -1,4 +1,4 @@
-.overlay {
+/* .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -124,4 +124,4 @@ span {
 .btnRentalCard:hover,
 .btnRentalCard:focus {
   background: var(--hovered-button-background-color);
-}
+} */

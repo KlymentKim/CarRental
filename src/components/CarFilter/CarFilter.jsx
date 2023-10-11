@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import carBrand from "../../apis/db/carBrand.json";
 import css from "./CarFilter.module.css";
+import closeBtn from "../../assets/img/close.svg"
 import SelectPrice from "../../helpers/SelectPrice/SelectPrice";
 import SelectBrand from "../../helpers/SelectBrand/SelectBrand";
 
+import { useDispatch, useSelector } from "react-redux";
+import { selectFilters } from "../../redux/selectors";
+import { resetFilters } from "../../redux/filters/filtersSlice";
 
 const CarFilter = ({onFilterChange}) => {
 
@@ -11,6 +15,22 @@ const CarFilter = ({onFilterChange}) => {
   const [selectedPrice, setSelectedPrice] = useState("");
   const [minMileage, setMinMileage] = useState("");
   const [maxMileage, setMaxMileage] = useState("");
+
+  const dispatch = useDispatch();
+  const filters = useSelector(selectFilters);
+
+  useEffect(() => {
+    setSelectedMake(filters.selectedMake);
+    setSelectedPrice(filters.selectedPrice);
+    setMinMileage(filters.minMileage);
+    setMaxMileage(filters.maxMileage);
+  }, [
+    filters.maxMileage,
+    filters.minMileage,
+    filters.selectedMake,
+    filters.selectedPrice,
+    filters.setMaxMileage,
+  ]);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -23,6 +43,12 @@ const CarFilter = ({onFilterChange}) => {
     };
 
     onFilterChange(filters);
+  };
+
+  const clearFilters = (e) => {
+    e.preventDefault();
+    console.log("clear");
+    dispatch(resetFilters());
   };
 
   return (
@@ -69,6 +95,9 @@ const CarFilter = ({onFilterChange}) => {
           </div>
         </div>
         <button type="submit" className={css.btn_Search}>Search</button>
+        <button onClick={clearFilters}>
+          <img src={closeBtn} alt="closeBtn" />
+        </button>
       </form>
     </>
   );
