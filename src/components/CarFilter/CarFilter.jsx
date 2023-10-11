@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import carBrand from "../../apis/db/carBrand.json";
+import makes from "../../apis/db/makes.json";
 import css from "./CarFilter.module.css";
 import closeBtn from "../../assets/img/close.svg"
-import SelectPrice from "../../helpers/SelectPrice/SelectPrice";
-import SelectBrand from "../../helpers/SelectBrand/SelectBrand";
+import SelectPrice from "../../helpers/MySelectPrice/MySelectPrice";
+import SelectBrand from "../../helpers/MySelectMake/MySelectMake";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectFilters } from "../../redux/selectors";
@@ -59,7 +59,7 @@ const CarFilter = ({onFilterChange}) => {
           <SelectBrand
             selectedMake={selectedMake}
             setSelectedMake={setSelectedMake}
-            carBrand={carBrand}
+            makes={makes}
           />
         </div>
         <div className={css.select_wrapper}>

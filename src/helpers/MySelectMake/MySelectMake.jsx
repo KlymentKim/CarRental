@@ -1,9 +1,9 @@
 import Select from "react-select";
 
-const SelectBrand = ({ selectedMake, setSelectedMake, makes }) => {
+const MySelectMake  = ({ selectedMake, setSelectedMake, makes }) => {
   const options = [
     { value: null, label: "Enter the text" },
-      ...makes.map((make, index) => ({
+      ...makes.map((make) => ({
       value: make,
       label: make,
     })),
@@ -101,4 +101,4 @@ const SelectBrand = ({ selectedMake, setSelectedMake, makes }) => {
   );
 };
 
-export default SelectBrand;
+export default MySelectMake;
