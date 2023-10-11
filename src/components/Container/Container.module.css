@@ -1,52 +1,24 @@
 .container {
-    width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    /* outline: 1px solid #b6b6b6; */
-    box-sizing: border-box;
-  }
-  
-  @media (min-width: 834px) {
-    .container {
-      width: 834px;
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-  }
-  
-  @media (min-width: 1232px) {
-    .container {
-      width: 1232px;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
-  }
-  
-
-  /* gragient logo */
-
-/* .wrap{width:100%;}
-.gradient_text{
-  font-family:inherit;
-  background: linear-gradient(to right, crimson,pink,springgreen);
-  background-size: 200% 200%;
-  animation: rainbow 2s ease-in-out infinite;
-  background-clip: text;
-  -webkit-background-clip:text;
-  color:rgba(0,0,0,1);
-  display:flex;
-  text-align:center;
-  transition: color .2s ease-in-out;
-  text-transform:uppercase;
-  font-weight:900;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
-.gradient-text:hover{
-  color:rgba(0,0,0,0);
+
+@media (min-width: 834px) {
+  .container {
+    width: 834px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
 }
-@keyframes rainbow { 
-  0%{background-position:left}
-  50%{background-position:right}
-  100%{background-position:left}
-} */
+
+@media (min-width: 1232px) {
+  .container {
+    width: 1232px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
