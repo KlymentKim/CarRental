@@ -1,0 +1,112 @@
+.filterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 100px;
+  }
+  .select_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .select_wrapper div {
+    display: flex;
+  }
+  .select_wrapper select {
+    border: none;
+    outline: none;
+    border-radius: 14px;
+    background: #f7f7fb;
+    display: flex;
+    width: 320px;
+    padding: 14px 89px 14px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    color: #121417;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+  }
+  .lable_title {
+    color: #8a8a89;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+  }
+  .inputName {
+    position: absolute;
+    top: 18px;
+    left: 14px;
+    color: #121417;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+  }
+  .input_wrapper {
+    position: relative;
+  }
+  .left_input {
+    border: none;
+    outline: none;
+    width: 160px;
+    height: 54px;
+    padding: 14px 24px 14px 62px;
+    border-radius: 14px 0px 0px 14px;
+    border-right: 1px solid rgba(138, 138, 137, 0.2);
+    background: #f7f7fb;
+    color: #121417;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+  }
+  .rigth_input {
+    border: none;
+    outline: none;
+    width: 160px;
+    height: 54px;
+    padding: 14px 24px 14px 38px;
+    border-radius: 0px 14px 14px 0px;
+    background: #f7f7fb;
+    color: #121417;
+    font-family: "Manrope", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.11;
+  }
+  .btn_Search {
+    border-radius: 12px;
+    background: #3470ff;
+    padding: 14px 44px;
+    width: 320px;
+    color: var(--White, #fff);
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+  }
+  
+  .btn_Search:hover,
+  .btn_Search:focus,
+  .closeBtn:hover,
+  .closeBtn:focus {
+    background: var(--hovered-button-background-color);
+  }
+  .closeBtn {
+    border-radius: 12px;
+    background: var(--pr-button-background-color);
+    padding: 14px 44px;
+    height: 52px;
+    width: 320px;
+    color: var(--White, #fff);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+  }
+  
