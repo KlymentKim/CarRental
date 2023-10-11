@@ -2,6 +2,7 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 axios.defaults.baseURL = "https://651fc0b1906e276284c373de.mockapi.io/api/v1/";
+// axios.defaults.baseURL = "https://65216e3da4199548356d33a1.mockapi.io/api/1/";
 
 export const setAdverts = createAsyncThunk(
   "catalog/fetchAdverts",

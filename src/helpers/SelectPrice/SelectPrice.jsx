@@ -8,7 +8,7 @@ const options = [
     })),
   ];
   
-  const MySelectPrice = ({ selectedPrice, setSelectedPrice }) => {
+  const SelectPrice = ({ selectedPrice, setSelectedPrice }) => {
     const handleChange = (selectedOption) => {
       setSelectedPrice(selectedOption ? selectedOption.value : null);
     };
@@ -93,4 +93,4 @@ const options = [
       </div>
     );
   };
-  export default MySelectPrice;
+  export default SelectPrice;
