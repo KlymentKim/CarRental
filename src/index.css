@@ -1,15 +1,9 @@
-@import-normalize;
-/* @import 'bootstrap/dist/css/bootstrap.css'; */
+/* @import-normalize; */
+
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 html {
   box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
 }
 
 :root {
@@ -38,12 +32,23 @@ ul {
   margin: 0;
   list-style: none;
 }
-nav,
-ul {
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   padding: 0;
+  margin: 0;
 }
-a {
+a,
+button {
+  border: none;
+  cursor: pointer;
   text-decoration: none;
-  color: unset;
+  font-family: inherit;
+  color: inherit;
 }

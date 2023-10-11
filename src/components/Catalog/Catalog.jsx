@@ -1,24 +1,31 @@
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AdvertItem from "../AdvertItem/AdvertItem";
 import ButtonLoad from "../../helpers/ButtonLoad/ButtonLoad";
 import css from "./Catalog.module.css";
 import { useDispatch, useSelector } from "react-redux";
+import { onNextPage } from "../../redux/catalog/catalogSlice";
+import { setAdverts, setAllAdverts } from "../../redux/catalog/operations";
+import LoaderSpiner from "../LoaderSpiner/LoaderSpiner";
 import {
-  onNextPage,
-  setAdverts,
-  firstAdverts,
-  setAllAdverts,
-} from "../../redux/catalog/catalogSlice";
-import { fetchAdverts, fetchAllAdverts } from "../../apis/fetchMockapi";
+  selectAdverts,
+  selectAllAdverts,
+  selectFilters,
+  selectIsLoading,
+  selectPage,
+} from "../../redux/selectors";
 
-import React from "react";
+// import { fetchAdverts, fetchAllAdverts } from "../../apis/fetchMockapi";
 
 const Catalog = () => {
   const dispatch = useDispatch();
-  const page = useSelector((state) => state.catalog.page);
-  const adverts = useSelector((state) => state.catalog.adverts);
-  const filters = useSelector((state) => state.catalog.filters);
-  const allAdverts = useSelector((state) => state.catalog.allAdverts);
+
+  const [isBnt, setIsBtn] = useState(true);
+
+  const isLoading = useSelector(selectIsLoading);
+  const page = useSelector(selectPage);
+  const adverts = useSelector(selectAdverts);
+  const filters = useSelector(selectFilters);
+  const allAdverts = useSelector(selectAllAdverts);
 
   const isFilterOn = Boolean(
     filters.selectedMake ||
@@ -27,29 +34,25 @@ const Catalog = () => {
       filters.maxMileage
   );
 
-  const onFindMore = () => {
-    dispatch(onNextPage());
-    getAdverts(page);
-  };
-
-  const getAdverts = (page) => {
-    fetchAdverts(page)
-      .then((results) => {
-        dispatch(setAdverts(results));
-      })
-      .catch((err) => console.error("error:" + err));
-  };
-
   useEffect(() => {
     if (adverts.length === 0) {
-      fetchAdverts(page).then((results) => {
-        dispatch(firstAdverts(results));
-      });
-      fetchAllAdverts().then((results) => {
-        dispatch(setAllAdverts(results));
-      });
+      dispatch(setAllAdverts());
+      dispatch(setAdverts(page));
     }
   }, [adverts.length, dispatch, page]);
+
+  useEffect(() => {
+    if (page + 1 > 4 || isFilterOn) {
+      setIsBtn(false);
+    } else if (!isFilterOn) {
+      setIsBtn(true);
+    }
+  }, [isFilterOn, page]);
+
+  const onFindMore = () => {
+    dispatch(onNextPage());
+    dispatch(setAdverts(page + 1));
+  };
 
   const filteredAdverts = allAdverts.filter((adverts) => {
     if (filters.selectedMake && adverts.make !== filters.selectedMake) {
@@ -81,15 +84,22 @@ const Catalog = () => {
               })}
             </ul>
           ) : (
-            <div className={css.noMatching}>
-              Sorry, no matching adverts found
-            </div>
+            <>
+              {!isLoading && (
+                <div className={css.noMatching}>
+                  Sorry, no matching adverts found
+                </div>
+              )}
+            </>
           )}
-          <ButtonLoad onFindMore={onFindMore} />
+          {isLoading ? (
+            <LoaderSpiner />
+          ) : (
+            <>{isBnt && <ButtonLoad onFindMore={onFindMore} />}</>
+          )}
         </>
       )}
     </>
   );
 };
-
 export default Catalog;

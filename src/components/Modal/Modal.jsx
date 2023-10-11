@@ -1,4 +1,3 @@
-import React from "react";
 import css from "./Modal.module.css";
 import closeBtn from "../../assets/img/close.svg";
 
@@ -17,9 +16,9 @@ const Modal = ({ closeModal, advert })=> {
   return (
     <div className={css.overlay} onClick={handleOverlyClick}>
       <div className={css.modalContainer}>
-        <div className={css.closeBtn} onClick={closeModal}>
+        <button className={css.closeBtn} onClick={closeModal}>
           <img src={closeBtn} alt="close" />
-        </div>
+        </button>
         {/* carImg */}
         <div>
           <div className={css.wrapperCar}>

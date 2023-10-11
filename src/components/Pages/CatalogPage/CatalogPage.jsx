@@ -1,12 +1,13 @@
 import Catalog from "../../Catalog/Catalog"
 import CarFilter from "../../CarFilter/CarFilter"
 import { useSelector, useDispatch } from "react-redux";
-import { setFilters } from "../../../redux/catalog/catalogSlice";
+import { setFilters } from "../../../redux/filters/filtersSlice";
+import { selectAdverts } from "../../../redux/selectors";
 
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  const adverts = useSelector((state) => state.catalog.adverts);
+  const adverts = useSelector(selectAdverts);
 
   const handleFilterChange = (filters) => {
     dispatch(setFilters(filters));

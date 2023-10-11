@@ -15,7 +15,7 @@
   width: 541px;
   height: 752px;
   border-radius: 24px;
-  background: #fff;
+  background:var(--pr-background-color);
   padding: 40px;
 }
 .closeBtn {
